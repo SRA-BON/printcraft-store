@@ -1,0 +1,17 @@
+# Optional: Render Blueprint — import repo in Render dashboard and use this file, or create Web Service manually.
+# https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: printcraft-store-api
+    runtime: node
+    plan: free
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: CLIENT_URL
+        sync: false
